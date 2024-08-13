@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: mc-app
-        image: lokanath11/devopshubg:xyz
+        image: lokanath11/batch16:xyz
         ports:
         - containerPort: 8080
 
