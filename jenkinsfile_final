@@ -22,8 +22,8 @@ pipeline {
                 sh 'ls -ltr'
                 
                 sh ''' mvn sonar:sonar \\
-                      -Dsonar.host.url=http://54.249.37.195:9000 \\
-                      -Dsonar.login=squ_6bff5e42c009b76e30aa46f8419ea532de11e410'''
+                      -Dsonar.host.url=http://43.204.144.254:9000/ \\
+                      -Dsonar.login=sqp_bfc86ecd1377e10405c06374c659e6af0ce5d093'''
             }
     	}
 		
@@ -41,7 +41,7 @@ pipeline {
         stage('Docker Image') {
             steps {
                 echo 'Docker Image building'
-				sh 'docker build -t lokanath11/batch16:${BUILD_NUMBER} .'
+				sh 'docker build -t lokanath11/batch17:${BUILD_NUMBER} .'
             }
         }
 		
@@ -54,7 +54,7 @@ pipeline {
             sh 'docker login -u lokanath11 -p ${dockerhub}'
 			
 			 }
-			   sh 'docker push lokanath11/batch16:${BUILD_NUMBER}'
+			   sh 'docker push lokanath11/batch17:${BUILD_NUMBER}'
 			   
            
 				}
